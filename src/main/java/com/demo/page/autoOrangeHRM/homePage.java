@@ -40,7 +40,7 @@ public class homePage extends navigationPage{
         return accountNameTest.getText();
     }
 
-    public void clickAdminPage() {
+    public void navigateToAdmin() {
         navigateToAdmin.click();
     }
 

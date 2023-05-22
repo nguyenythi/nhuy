@@ -41,7 +41,8 @@ public class loginPage extends navigationPage{
         btnLogin.click();
     }
 
-    public void filloutLoginAndSubmit(String username, String password) {
+    public void login(String username, String password) {
+        openOrangeHRMWebsite();
         this.enterUsername(username);
         this.enterPassword(password);
         this.clickLoginButton();

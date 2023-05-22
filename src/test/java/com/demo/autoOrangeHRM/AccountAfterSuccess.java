@@ -11,9 +11,8 @@ public class AccountAfterSuccess extends BaseTest{
 
     @Test
     public void loginAccountAfetrSuccess() {
-        loginPage login = new loginPage();
-        login.openOrangeHRMWebsite();
-        login.filloutLoginAndSubmit("Admin", "admin123");
+        loginPage loginPage = new loginPage();
+        loginPage.login("Admin", "admin123");
 
         homePage home = new homePage();
         Assert.assertTrue(home.isDashboardDisplayed());

@@ -40,7 +40,7 @@ public class DemoTest {
         // Verify page title
         Assert.assertEquals(title, "The Internet");
         // Log the result
-        LOGGER.info("Title found: " + title);
+        LOGGER.info("Title foundddd: " + title);
     }
 
     @AfterMethod
