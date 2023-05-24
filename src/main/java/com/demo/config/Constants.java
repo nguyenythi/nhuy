@@ -27,8 +27,6 @@ public final class Constants {
     /**
      * Initial URL
      */
-    public static String Url_Base = "http://eliasnogueira.com/external/selenium-java-architecture/";
-    public static String Url_Base2 = "https://the-internet.herokuapp.com/";
     public static String Url_OrangeHRM = "https://opensource-demo.orangehrmlive.com/";
 
 }
