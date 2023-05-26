@@ -1,5 +1,7 @@
 package com.demo.page.autoOrangeHRM;
 
+import javax.xml.xpath.XPath;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,8 +34,6 @@ public class timePage extends navigationPage{
     private WebElement selectActivity;
 
     //div[contains(@class,'oxd-select-text oxd-select-text')]
-
-    
 
     @FindBy(xpath = "//span[text()='QA Testing']")
     private WebElement clickAutoActivity;
@@ -89,8 +89,16 @@ public class timePage extends navigationPage{
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement btnSave;
 
+    //begin - verify message
+
+    @FindBy(xpath = "//p[text()='Success']")
+    private WebElement  verifySuccess;
+
     @FindBy(xpath = "//p[text()='Successfully Saved']")
-    private WebElement verifySuccess;
+    private WebElement verifySuccessfullySaved;
+
+    //end - verify message
+
 
     WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),10);
 
@@ -205,7 +213,7 @@ public class timePage extends navigationPage{
     }
 
     
-    //verify success
+    //begin - verify success
     public boolean isSuccessDisplayed() {
         Boolean isSuccessDisplayed = false;
         try {
@@ -219,6 +227,22 @@ public class timePage extends navigationPage{
     public String getSuccess() {
         return verifySuccess.getText();
     }
+
+    public boolean isSuccessfullySavedDisplayed() {
+        Boolean isSuccessfullySavedDisplayed = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOf(verifySuccessfullySaved));
+            return isSuccessfullySavedDisplayed = true;
+        } catch (Exception e) {
+            return isSuccessfullySavedDisplayed;
+        }
+    }
+
+    public String getSuccessfullySaved() {
+        return verifySuccessfullySaved.getText();
+    }
+
+    //end - verify success
 
     //verify select project
 

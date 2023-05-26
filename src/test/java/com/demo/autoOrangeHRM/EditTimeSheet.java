@@ -58,11 +58,19 @@ public class EditTimeSheet extends BaseTest{
         timePage.clickbtnSave();
         // Thread.sleep(10000);
 
-        //Verify success
+        //begin - Verify success
         Assert.assertTrue(timePage.isSuccessDisplayed());
 
         String getSuccess = timePage.getSuccess();
-        System.out.println("Verify: " + getSuccess); 
+        System.out.println(getSuccess); 
+
+        Assert.assertTrue(timePage.isSuccessfullySavedDisplayed());
+
+        String getSuccessfullySaved = timePage.getSuccessfullySaved();
+        System.out.println(getSuccessfullySaved);
+
+        //end - verify success
+
 
         //verify Apache Software Foundation - ASF - Phase 1
         Assert.assertTrue(timePage.isSelectProjectDisplayed());
@@ -93,7 +101,7 @@ public class EditTimeSheet extends BaseTest{
         Assert.assertTrue(timePage.isTime3Displayed());
 
         String getTime3 = timePage.getTime3();
-        System.out.println("Time 1: " + getTime3);
+        System.out.println("Time 3: " + getTime3);
 
         //Verify Time 4
         Assert.assertTrue(timePage.isTime4Displayed());
@@ -118,7 +126,6 @@ public class EditTimeSheet extends BaseTest{
 
         String getTime7 = timePage.getTime7();
         System.out.println("Time 7: " + getTime7);
-
 
    
     }
